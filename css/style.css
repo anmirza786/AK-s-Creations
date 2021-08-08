@@ -1,3 +1,8 @@
-body{
-    background: gold;
+:root{
+    --color-primary:  blue;
+    --color-secondary: dodgerblue;
+    --color-tertiary: skyblue;
+    --color-accent: tomato;
+    --color--headings: darkblue;
+    --color-body: #918ca4;
 }
