@@ -8,6 +8,9 @@
   --color-body: #918ca4;
   --font-family: "Palanquin", sans-serif;
 }
+
+/* Typography */
+
 html {
   /* 16px x 62.5% = 10px */
   font-size: 62.5%;
@@ -48,5 +51,31 @@ p {
   }
   h3 {
     font-size: 2.4rem;
+  }
+}
+
+/* Links */
+
+a {
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.link-arrow {
+  color: var(--color-accent);
+  text-transform: uppercase;
+}
+.link-arrow::after {
+  content: "→︁";
+  margin-left: 5px;
+  transition: margin 0.16s;
+}
+.link-arrow:hover::after {
+  margin-left: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+  .link-arrow {
+    font-size: 1.5rem;
   }
 }
