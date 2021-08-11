@@ -220,3 +220,22 @@ a {
     font-size: 1.5rem;
   }
 }
+
+/* Input */
+
+.input {
+  padding: 1.5rem 3.5rem;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  outline: 0;
+  font-size: 2rem;
+  color: var(--color--headings);
+}
+::placeholder {
+  color: #cdcbd7;
+}
+@media screen and (min-width: 1024px) {
+  .input {
+    font-size: 1.5rem;
+  }
+}
