@@ -6,6 +6,8 @@
   --color-accent: tomato;
   --color--headings: darkblue;
   --color-body: #918ca4;
+  --color-border: #ccc;
+  --border-radius: 30px;
   --font-family: "Palanquin", sans-serif;
 }
 *,
@@ -172,26 +174,30 @@ a {
   white-space: nowrap;
   transition: 0.5s;
   margin: 1rem 0;
+  outline: 0;
 }
 .btn-accent {
   background: var(--color-accent);
   color: white;
 }
-.btn-accent:hover {
+.btn-accent:hover,
+.btn-accent:focus {
   filter: brightness(150%);
 }
 .btn-primary {
   background: var(--color-primary);
   color: white;
 }
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:focus {
   background: var(--color-secondary);
 }
 .btn-secondary {
   background: var(--color-secondary);
   color: white;
 }
-.btn-secondary:hover {
+.btn-secondary:hover,
+.btn-secondary:focus {
   background: var(--color-tertiary);
 }
 .btn-transparent-background {
@@ -199,7 +205,8 @@ a {
   color: black;
   border: 2px solid black;
 }
-.btn-transparent-background:hover {
+.btn-transparent-background:hover,
+.btn-transparent-background:focus {
   color: white;
   background: var(--color--headings);
   border: 2px solid var(--color--headings);
@@ -208,7 +215,8 @@ a {
   background: var(--color-accent);
   color: white;
 }
-.btn-normal:hover {
+.btn-normal:hover,
+.btn-normal:focus {
   filter: brightness(150%);
 }
 .btn-block {
@@ -225,14 +233,26 @@ a {
 
 .input {
   padding: 1.5rem 3.5rem;
-  border: 1px solid #ccc;
-  border-radius: 30px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
   outline: 0;
   font-size: 2rem;
   color: var(--color--headings);
 }
 ::placeholder {
   color: #cdcbd7;
+}
+.input-group {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  display: flex;
+}
+.input-group .input {
+  border: 0;
+  flex-grow: 1;
+}
+.input-group .btn {
+  margin: 4px;
 }
 @media screen and (min-width: 1024px) {
   .input {
