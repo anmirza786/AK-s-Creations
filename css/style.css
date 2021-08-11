@@ -8,6 +8,10 @@
   --color-body: #918ca4;
   --font-family: "Palanquin", sans-serif;
 }
+*,
+*::after,
+*::before {
+}
 
 /* Typography */
 
@@ -152,4 +156,67 @@ a {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Buttons */
+
+.btn {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 2rem 3rem;
+  border: 0;
+  border-radius: 40px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.5s;
+  margin: 1rem 0;
+}
+.btn-accent {
+  background: var(--color-accent);
+  color: white;
+}
+.btn-accent:hover {
+  filter: brightness(150%);
+}
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+.btn-primary:hover {
+  background: var(--color-secondary);
+}
+.btn-secondary {
+  background: var(--color-secondary);
+  color: white;
+}
+.btn-secondary:hover {
+  background: var(--color-tertiary);
+}
+.btn-transparent-background {
+  background: transparent;
+  color: black;
+  border: 2px solid black;
+}
+.btn-transparent-background:hover {
+  color: white;
+  background: var(--color--headings);
+  border: 2px solid var(--color--headings);
+}
+.btn-normal {
+  background: var(--color-accent);
+  color: white;
+}
+.btn-normal:hover {
+  filter: brightness(150%);
+}
+.btn-block {
+  width: 100%;
+  display: inline-block;
+}
+@media screen and (min-width: 1024px) {
+  .btn {
+    font-size: 1.5rem;
+  }
 }
