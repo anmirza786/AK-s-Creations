@@ -13,6 +13,7 @@
 *,
 *::after,
 *::before {
+  padding: 0;
 }
 
 /* Typography */
@@ -506,7 +507,6 @@ a {
 }
 .icon--white {
   fill: lightgray;
-  background-color: white;
 }
 .collapsable__chevron {
   transform: rotate(-90deg);
@@ -558,4 +558,78 @@ a {
   margin: 0 auto;
 }
 
-/**/
+/* Navbar */
+
+.nav {
+  background: var(--color-primary);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1rem 1rem;
+}
+.nav__list {
+  width: 100%;
+  margin: 0;
+}
+.nav__item {
+  padding: 0.5rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.781);
+}
+.nav__item > a {
+  color: white;
+  transition: color 0.3s;
+}
+.nav__item > a:hover {
+  color: darkblue;
+}
+.nav-toggler-container {
+  cursor: pointer;
+  transition: all 0.15s;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: 2px solid white;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 0;
+  opacity: 0.9;
+  transform: all 0.15s;
+}
+
+.nav__brand {
+  transform: translateY(5px);
+}
+.nav__img {
+  height: 40px;
+  padding-left: 10px;
+}
+.nav-toggler {
+  fill: white;
+  width: 20px;
+  height: 20px;
+  color: white;
+  opacity: 0.9;
+}
+.collapsable--expanded .nav-toggler-container {
+  opacity: 1;
+  box-shadow: 0 0 0 3px rgb(105, 105, 105);
+}
+.collapsable--expanded .nav-toggler {
+  opacity: 1;
+}
+@media screen and (min-width: 768px) {
+  .nav-toggler, .nav-toggler-container{
+    display: none;
+  }
+  .nav__list{
+    width: auto;
+    display: flex;
+    font-size: 1.6rem;
+    max-height: 100%;
+    opacity: 1;
+  }
+  .nav__item{
+    border: 0;
+  }
+}
