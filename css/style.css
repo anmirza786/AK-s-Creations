@@ -13,7 +13,7 @@
 *,
 *::after,
 *::before {
-  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Typography */
@@ -33,6 +33,7 @@ h2,
 h3 {
   color: var(--color--headings);
   margin-bottom: 0.5rem;
+  line-height: 1.1;
 }
 h1 {
   font-size: 7rem;
@@ -549,7 +550,7 @@ a {
   padding-bottom: calc(var(--padding-vertical));
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
 }
-.block--skewed-right {
+.block--skewed-left {
   padding-bottom: calc(var(--padding-vertical));
   clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
 }
@@ -619,17 +620,43 @@ a {
   opacity: 1;
 }
 @media screen and (min-width: 768px) {
-  .nav-toggler, .nav-toggler-container{
+  .nav-toggler,
+  .nav-toggler-container {
     display: none;
   }
-  .nav__list{
+  .nav__list {
     width: auto;
     display: flex;
     font-size: 1.6rem;
     max-height: 100%;
     opacity: 1;
   }
-  .nav__item{
+  .nav__item {
     border: 0;
   }
+}
+
+/* Hero Section */
+
+.hero {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+}
+.hero__tagline {
+  font-size: 2rem;
+  color: #b9c3cf;
+  letter-spacing: 1px;
+  margin: 2rem 0 5rem;
+}
+.hero__image {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .hero{
+    padding-top: 0;
+  }
+  .hero__content{
+    text-align: left;
+    align-self: center;
+  }
+  
 }
