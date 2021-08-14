@@ -18,6 +18,10 @@
 
 /* Typography */
 
+::selection {
+  background: var(--color-primary);
+  color: white;
+}
 html {
   /* 16px x 62.5% = 10px */
   font-size: 62.5%;
@@ -43,6 +47,7 @@ h2 {
 }
 h3 {
   font-size: 3rem;
+  font-weight: 500;
 }
 p {
   margin-top: 0;
@@ -66,17 +71,17 @@ p {
 
 a {
   text-decoration: none;
-  font-size: 2rem;
-  font-weight: bold;
 }
 .link-arrow {
   color: var(--color-accent);
   text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: bold;
 }
 .link-arrow::after {
-  content: "→︁";
+  content: "-->";
   margin-left: 5px;
-  transition: margin 0.16s;
+  transition: margin 0.15s;
 }
 .link-arrow:hover::after {
   margin-left: 10px;
@@ -107,6 +112,7 @@ a {
 }
 .badge--small {
   font-size: 1.6rem;
+  padding: 0.5rem 1.5rem;
 }
 @media screen and (min-width: 1024px) {
   .badge {
@@ -122,15 +128,15 @@ a {
 .list {
   list-style: none;
   padding-left: 0;
-  color: var(--color--headings);
 }
 .list--inline .list__item {
-  display: inline;
+  display: inline-block;
   margin-right: 2rem;
 }
 .list--tick {
   list-style-image: url(../svgs/solid/tick.svg);
   padding-left: 3rem;
+  color: var(--color--headings);
 }
 .list--tick .list__item {
   padding-left: 0.5rem;
@@ -149,8 +155,15 @@ a {
   width: 40px;
   height: 40px;
 }
+.icon--small {
+  width: 30px;
+  width: 30px;
+}
 .icon--primary {
   fill: var(--color-primary);
+}
+.icon--small {
+  fill: white;
 }
 .icon-container {
   background: #f3f9fa;
@@ -161,22 +174,24 @@ a {
   justify-content: center;
   align-items: center;
 }
-
+.icon--container--accent {
+  background: var(--color-accent);
+}
 /* Buttons */
 
 .btn {
+  border-radius: 40px;
+  border: 0;
+  cursor: pointer;
   font-size: 1.8rem;
   font-weight: 600;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 2rem 3rem;
-  border: 0;
-  border-radius: 40px;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: 0.5s;
   margin: 1rem 0;
   outline: 0;
+  padding: 2rem 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  white-space: nowrap;
 }
 .btn .icon {
   width: 2rem;
@@ -244,12 +259,12 @@ a {
 /* Input */
 
 .input {
-  padding: 1.5rem 2.5rem;
-  border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
-  outline: 0;
-  font-size: 2rem;
+  border: 1px solid var(--color-border);
   color: var(--color--headings);
+  font-size: 2rem;
+  outline: 0;
+  padding: 1.5rem 2.5rem;
 }
 ::placeholder {
   color: #cdcbd7;
@@ -271,9 +286,6 @@ a {
   .input {
     font-size: 1.5rem;
   }
-  .input-group {
-    display: flex;
-  }
 }
 
 /* Cards */
@@ -294,6 +306,9 @@ a {
 .card--secondary .card__header {
   background: var(--color-secondary);
   color: white;
+}
+.card--primary .badge--primary {
+  background: #126de4;
 }
 .card--secondary .badge--secondary {
   background: #02cdf1;
@@ -324,9 +339,6 @@ a {
   font-weight: 300;
   letter-spacing: 1px;
   display: block;
-}
-.plan .list__item {
-  margin-bottom: 2rem;
 }
 .plan .list__item {
   margin-bottom: 2rem;
@@ -373,6 +385,7 @@ a {
 
 .media {
   display: flex;
+  margin-bottom: 4rem;
 }
 .media__title {
   margin-top: 0;
@@ -455,6 +468,7 @@ a {
 }
 .testimonial__image {
   position: relative;
+  margin: 0 3rem;
 }
 .testimonial__image > img {
   width: 100%;
@@ -469,12 +483,16 @@ a {
   right: -32px;
 }
 @media screen and (min-width: 768px) {
+  .testimonial__image {
+    margin: 0;
+  }
   .testimonial .quote,
   .testimonial .quote__author {
     font-size: 2.4rem;
   }
   .testimonial .quote {
     margin-left: 6rem;
+    margin-right: 0;
   }
 }
 
@@ -566,16 +584,18 @@ a {
   background: black;
   color: #7b858b;
 }
-.block--dark .block__heading {
+.block--dark h1,
+.block--dark h2,
+.block--dark h3 {
   color: white;
 }
 .block--skewed-right {
-  padding-bottom: calc(var(--padding-vertical));
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+  padding-bottom: calc(var(--padding-vertical) + 4rem);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
 }
 .block--skewed-left {
-  padding-bottom: calc(var(--padding-vertical));
-  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+  padding-bottom: calc(var(--padding-vertical) + 4rem);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
 }
 .container {
   max-width: 1140px;
@@ -723,7 +743,7 @@ a {
   gap: 4rem 2rem;
   margin: 12rem 0;
 }
-.feature:first-of-type{
+.feature:first-of-type {
   margin-top: 6rem;
 }
 .feature__heading {
@@ -735,5 +755,23 @@ a {
 @media screen and (min-width: 768px) {
   .feature:nth-of-type(even) .feature__content {
     order: 2;
+  }
+}
+
+/* Showcase Block */
+
+.block-showcase__image > img {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .block-showcase .grid {
+    grid-template-columns: 50% 50%;
+  }
+  .block-showcase__image {
+    justify-self: end;
+  }
+  .block-showcase__image > img {
+    width: auto;
+    max-width: 700;
   }
 }
