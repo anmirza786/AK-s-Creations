@@ -15,6 +15,7 @@
 *::before {
   box-sizing: border-box;
 }
+
 /* Typography */
 
 ::selection {
@@ -224,8 +225,8 @@ a {
 }
 .btn-transparent-background {
   background: transparent;
-  color: black;
-  border: 2px solid black;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 .btn-transparent-background:hover,
 .btn-transparent-background:focus {
@@ -582,7 +583,7 @@ a {
   margin-top: 0;
 }
 .block--dark {
-  background: black;
+  background: var(--color-primary);
   color: #7b858b;
 }
 .block--dark h1,
@@ -606,10 +607,10 @@ a {
 /* Navbar */
 
 .nav__container {
-  background: black;
+  background: var(--color-primary);
 }
 .nav {
-  background: black;
+  background: var(--color-primary);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -773,6 +774,9 @@ a {
 .block-showcase__image > img {
   width: 100%;
 }
+.block-showcase p {
+  color: white;
+}
 @media screen and (min-width: 768px) {
   .block-showcase .grid {
     grid-template-columns: 50% 50%;
@@ -789,11 +793,11 @@ a {
 /* Footer */
 
 .footer {
-  background: #232323;
+  background: rgb(36, 131, 255);
   padding-top: 10rem;
 }
 .footer a {
-  color: #777;
+  color: white;
   transition: color 0.3s;
 }
 .footer a:hover {
@@ -822,7 +826,7 @@ a {
 .footer__copyright {
   color: white;
   font-size: 2.1rem;
-  opacity: 0.3;
+  opacity: 0.9;
 }
 @media screen and (min-width: 768px) {
   .footer {

@@ -6,16 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="We would work togather">
     <title>AK's Creations - Lets Create</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css" id="stylesheet"/>
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/all.css" />
     <link href="css/fontawesome.css" rel="stylesheet" />
     <link href="css/brands.css" rel="stylesheet" />
     <link href="css/solid.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/color-button.css">
   </head>
   <body>
-    <header>
-      <nav class="nav collapsable">
+    <header class="nav__container">
+      <nav class="nav collapsable container">
         <a href="#"
           ><img class="nav__img" src="images/ryksoft-logo-white.png" alt=""
         /></a>
@@ -30,7 +31,15 @@
           <li class="nav__item"><a href="#">ZBC</a></li>
           <li class="nav__item"><a href="#">Me</a></li>
         </ul>
-      </nav>      
+        <div class="list">
+        <button class="change-color-btn" style="background: black;" onclick="style1()">
+        </button>
+        <button class="change-color-btn" style="background: rgb(90, 126, 191);" onclick="style2()">
+        </button>
+        <button class="change-color-btn" style="background: blue;" onclick="style3()">
+        </button>
+      </div>
+      </nav>   
     </header>
     <section class="block block--dark block--skewed-left hero">
       <div class="container grid grid--1x2">
@@ -260,22 +269,17 @@
         <h2>User-friendly Control Panel</h2>
       </header>
       <div class="container grid grid--1x2">
-        <picture class="block-showcase__image">
-          <source
-            type="image/webp"
-            srcset="images/ipad.webp 1x, images/ipad@2x.webp 2x"
-          />
-          <source
-            type="image/png"
-            srcset="images/ipad.png 1x, images/ipad@2x.png 2x"
-          />
-          <img src="images/ipad.png" alt="" />
-        </picture>
+        
+          <img
+          class="hero__image"
+          src="images/banner.png"
+          alt="Beautiful Image of Server"
+        />
         <ul class="list">
           <li>
             <div class="media">
               <div class="media__image">
-                <svg class="icon icon--primary">
+                <svg class="icon icon--white">
                   <use xlink:href="images/sprite.svg#snap"></use>
                 </svg>
               </div>
@@ -292,7 +296,7 @@
           <li>
             <div class="media">
               <div class="media__image">
-                <svg class="icon icon--primary">
+                <svg class="icon icon--white">
                   <use xlink:href="images/sprite.svg#growth"></use>
                 </svg>
               </div>
@@ -309,7 +313,7 @@
           <li>
             <div class="media">
               <div class="media__image">
-                <svg class="icon icon--primary">
+                <svg class="icon icon--white">
                   <use xlink:href="images/sprite.svg#wordpress"></use>
                 </svg>
               </div>
@@ -389,12 +393,12 @@
     <footer class="block block--dark footer">
       <div class="container grid footer__sections">
         <section class="collapsable footer__section">
-          <header class="collapsable__header">
+          <div class="collapsable__header">
             <h2 class="collapsable__heading footer__heading">Item 1</h2>
             <svg class="icon icon--white collapsable__chevron">
               <use xlink:href="svgs/solid-sprit.svg#arrow-circle-down"></use>
             </svg>
-          </header>
+          </div>
           <div class="collapsable__content">
             <ul class="list">
               <li><a href="">Item 1</a></li>
@@ -404,12 +408,12 @@
           </div>
         </section>
         <section class="collapsable footer__section">
-          <header class="collapsable__header">
+          <div class="collapsable__header">
             <h2 class="collapsable__heading footer__heading">item 2</h2>
             <svg class="icon icon--white collapsable__chevron">
               <use xlink:href="svgs/solid-sprit.svg#arrow-circle-down"></use>
             </svg>
-          </header>
+          </div>
           <div class="collapsable__content">
             <ul class="list">
               <li><a href="">Item 1</a></li>
@@ -419,12 +423,12 @@
           </div>
         </section>
         <section class="collapsable footer__section">
-          <header class="collapsable__header">
+          <div class="collapsable__header">
             <h2 class="collapsable__heading footer__heading">item 3</h2>
             <svg class="icon icon--white collapsable__chevron">
               <use xlink:href="svgs/solid-sprit.svg#arrow-circle-down"></use>
             </svg>
-          </header>
+          </div>
           <div class="collapsable__content">
             <ul class="list">
               <li><a href="">Item 1</a></li>
@@ -434,12 +438,12 @@
           </div>
         </section>
         <section class="collapsable footer__section">
-          <header class="collapsable__header">
+          <div class="collapsable__header">
             <h2 class="collapsable__heading footer__heading">item 4</h2>
             <svg class="icon icon--white collapsable__chevron">
               <use xlink:href="svgs/solid-sprit.svg#arrow-circle-down"></use>
             </svg>
-          </header>
+          </div>
           <div class="collapsable__content">
             <ul class="list">
               <li><a href="">Item 1</a></li>
@@ -447,13 +451,14 @@
               <li><a href="">Item 3</a></li>
             </ul>
         </section>
-        <section class="footer__brand">
+        <div class="footer__brand">
           <img class="nav__img" src="images/ryksoft-logo-white.png" alt="">
           <p class="footer__copyright">Copyright 2021 RYKSOFT</p>
-        </section>
+        </div>
       </div>
     </footer>
     <script src="js/func.js"></script>
+    <script src="js/change-color.js"></script>
   </div>
   </body>
 </html>
